@@ -1,1 +1,1 @@
-# Zadania maturalne
+# Zadania maturalne - informatyka
