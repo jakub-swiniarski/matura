@@ -1,10 +1,9 @@
 #include <algorithm>
 #include <fstream>
-#include <iostream>
 #include <string>
 
 int main(void) {
-    int num = 0;
+    int count = 0;
     int greatest = 0;
     
     std::ifstream data("dane/skrot.txt");
@@ -24,12 +23,13 @@ int main(void) {
         }
 
         if (!exists) {
-            num++;
+            count++;
             greatest = std::max(greatest, n1);
         }
     }
+
     std::ofstream output("wyniki3_2.txt");
-    output << num << '\n' << greatest;
+    output << count << '\n' << greatest;
 
     return 0;
 }
