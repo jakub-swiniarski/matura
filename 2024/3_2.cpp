@@ -11,16 +11,21 @@ int main(void) {
     std::string line;
     while (std::getline(data, line)) {
         bool exists = 0;
-        for (int i = 0; i < line.size() - 1; i++) {
-            int digit = line[i] - '0';
+        int n1 = std::stoi(line);
+        int n2 = n1;
+
+        while (n2 > 0) {
+            int digit = n2 % 10;
             if (digit % 2 != 0) {
                 exists = 1;
                 break;
             }
+            n2 /= 10;
         }
+
         if (!exists) {
             num++;
-            greatest = std::max(greatest, std::stoi(line));
+            greatest = std::max(greatest, n1);
         }
     }
     std::ofstream output("wyniki3_2.txt");
