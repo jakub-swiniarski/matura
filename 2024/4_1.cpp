@@ -11,7 +11,7 @@ void load(std::ifstream &file, std::vector<int> &vec) {
 }
 
 int main(void) {
-    std::ifstream data("dane/liczby_przyklad.txt");
+    std::ifstream data("dane/liczby.txt");
     std::ofstream output("wyniki4.txt", std::ios::app);
     std::vector<int> primes, ints;
     int count = 0;

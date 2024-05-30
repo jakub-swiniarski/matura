@@ -23,7 +23,7 @@ int nskrot(int n) {
 }
 
 int main(void) {
-    std::ifstream data("dane/skrot2_przyklad.txt");
+    std::ifstream data("dane/skrot2.txt");
     std::ofstream output("wyniki3_3.txt");
     std::string line;
 
