@@ -1,5 +1,15 @@
 #include <bits/stdc++.h>
 
+void load(std::ifstream &file, std::vector<int> &vec) {
+    std::string line;
+    std::getline(file, line);
+    std::istringstream iss(line);
+
+    int num;
+    while (iss >> num)
+        vec.push_back(num);
+}
+
 int main(void) {
     std::ifstream data("dane/liczby_przyklad.txt");
     std::ofstream output("wyniki4.txt", std::ios::app);
@@ -8,20 +18,8 @@ int main(void) {
     
     output << 1 << ' ';
 
-    int num;
-    std::string line;
-    std::istringstream iss;
-
-    std::getline(data, line);
-    iss.str(line);
-    while (iss >> num)
-        primes.push_back(num);
-
-    std::getline(data, line);
-    iss.clear();
-    iss.str(line);
-    while (iss >> num)
-        ints.push_back(num);
+    load(data, primes);
+    load(data, ints);
 
     for (const auto p : primes) {
         for (const auto i : ints) {
